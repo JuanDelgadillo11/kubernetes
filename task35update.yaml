@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: web-server-rs-deployment
+  name: web-server-deployment
   labels:
     env: dev    
 spec:
