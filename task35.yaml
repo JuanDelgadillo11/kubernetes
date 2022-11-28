@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-server-rs-deployment
+  labels:
+    env: dev    
+spec:
+  replicas: 6
+  selector: 
+    matchLabels:
+      tier: web-server2
+  template:
+    metadata:
+      name: calebespinoza
+      labels:
+        tier: web-server2
+    spec:
+      containers:
+      - name: calebespinoza
+        image: calebespinoza/store-products:1.0 
+        ports:
+        - containerPort: 80
